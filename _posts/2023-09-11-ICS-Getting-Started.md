@@ -63,7 +63,7 @@ Recommended replacement for `apt-get` when used interactively in Ubuntu versions
 For equivalent commands in other package managers, see <https://wiki.archlinux.org/title/Pacman/Rosetta>.
 More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 
-- Update the list of available packages and versions (it's recommended to run this before other `apt` commands):
+- Update the list of available packages and versions (it's recommended to run this before other "apt" commands):
     sudo apt update
 
 - Search for a given package:
@@ -75,7 +75,7 @@ More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 - Install a package, or update it to the latest available version:
     sudo apt install package
 
-- Remove a package (using `purge` instead also removes its configuration files):
+- Remove a package (using "purge" instead also removes its configuration files):
     sudo apt remove package
 
 - Upgrade all installed packages to their newest available versions:
@@ -120,7 +120,7 @@ More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 
 ```bash
 sudo apt-get install openssh-server
-# Make sure ssh-daemon is running by running `ps -aef | grep sshd`
+# Make sure ssh-daemon is running by running "ps -aef | grep sshd"
 ssh localhost # this should work now; it's normal that nothing is shown when inputting your password
 ```
 如果你不知道什么是 SSH，你可以单纯地把它理解为一个远程 Shell 服务。在这个 SSH 连接里，你可以通过命令行随意地控制目标机器。

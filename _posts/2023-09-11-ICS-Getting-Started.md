@@ -28,7 +28,7 @@ tags:
 * Windows: <a href="https://mp.weixin.qq.com/s/juWtNUnIuFJfXoP_6eKIKg" target="_blank">WSL2 (轻量级) </a>
 * Windows: <a href="https://mp.weixin.qq.com/s/T6ertdMaN-Qb-8YlLp12uw" target="_blank">VMware </a>
 * MacOS: <a href="https://mp.weixin.qq.com/s/VDwpn34hpLroSLUVhdTxmg" target="_blank">VMware/VirtualBox </a> 
-VMware Fusion 对 Mac 个人用户是免费的！请到<a href="https://www.vmware.com/products/fusion.html" target="_blank">这里</a>注册。
+VMware Fusion 对 Mac 个人用户是免费的！请到<a href="https://www.vmware.com/products/fusion.html" target="_blank">这里</a>注册
 * Windows/MacOS: <a href="https://mp.weixin.qq.com/s/juWtNUnIuFJfXoP_6eKIKg" target="_blank">docker </a> 
 * **Mac M1/M2**: 以上两种解决方案中 VMware 和 Docker 都适配 Apple Silicon 了
     

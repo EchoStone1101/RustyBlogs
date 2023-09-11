@@ -10,7 +10,7 @@ tags:
 
 为了完成 ICS 课程的实习部分，你或多或少需要做一些准备。这份指南集合了一些对 ICS beginners 可能会有帮助的通用信息，希望能助你快速上手。
 
-**TL;DR**: 你需要一个足够稳定的 Linux 环境，并掌握 <a href="https://www.gnu.org/software/bash/" target="_blank">bash</a> 的使用方式。
+**TL;DR**: 你需要一个足够稳定的 Linux 环境，并掌握 <a href="https://www.gnu.org/software/bash/" target="_blank">bash</a> 命令行的使用方式。
 
 
 ### Linux 虚拟机配置指南
@@ -106,10 +106,10 @@ More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 * 新建一个空白文档 test
 * 在这个文档里编写一段 C 语言 Hello World 程序；或者copy-paste这个<a href="https://gist.github.com/gcr/1075131" target="_blank">旋转的甜甜圈</a>
 * 把这个文档重命名为 hello.c
-* 把这个文档拷贝到 ICS_Labs 里
-* 进入 ICS_Labs，在里面编译 hello.c
+* 把这个文档拷贝到 ICS-Labs 里
+* 进入 ICS-Labs，在里面编译 hello.c
 * 运行你的可执行文件，`Hello World`！
-* （或者，欣赏一个旋转的甜甜圈。按 Ctrl+C 退出甜甜圈。你可以用 Ctrl+C 退出绝大多数程序。除了 `rm -rf /*` - 千万不要真的运行这段指令，我警告过你了）
+* （或者，欣赏一个旋转的甜甜圈。按 Ctrl+C 退出甜甜圈。你可以用 Ctrl+C 退出绝大多数程序。除了 `rm -rf /*` - 千万不要真的运行这段指令，我警告过你了。）
 
 #### （Optional）配置 Remote VSCode
 
@@ -150,6 +150,6 @@ scp -r ./datalab-handout username@ip:~/ICS-Labs/
 
 ### 自学指南
 
-由我的史诗级学长 ~~PKUflyingpig~~ 倾情打造的<a href="https://csdiy.wiki" target="_blank">CS 自学指南</a> ，相信总有你没学过的吧。
+由我们的的史诗级学长 PKUflyingpig 倾情打造的<a href="https://csdiy.wiki" target="_blank">CS 自学指南</a> ，相信总有你没学过的吧。
 
 目前你只需要关注“必学工具”部分，以及“编程入门”里的 MIT-Missing Semester。里面都附上了深入学习的资料，也部份覆盖了上面提到的一些操作。有空可以尝试学习看看～

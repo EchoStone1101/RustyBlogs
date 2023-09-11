@@ -3,6 +3,8 @@ title: "ICS: Getting Started"
 date: 2023-09-11
 author: EchoStone
 layout: post
+tags:
+   - ICS
 ---
 > 2023 Fall Semester
 

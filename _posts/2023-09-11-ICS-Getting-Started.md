@@ -20,7 +20,9 @@ layout: post
 * 你可以在断网的环境下也坚持写 Lab
 
 如果你希望在自己的电脑上配置本地的 Linux 环境：
+
 #### 虚拟机选择
+
 * Windows: <a href="https://mp.weixin.qq.com/s/juWtNUnIuFJfXoP_6eKIKg" target="_blank">WSL2 (轻量级) </a>
 * Windows: <a href="https://mp.weixin.qq.com/s/T6ertdMaN-Qb-8YlLp12uw" target="_blank">VMware </a>
 * MacOS: <a href="https://mp.weixin.qq.com/s/VDwpn34hpLroSLUVhdTxmg" target="_blank">VMware/VirtualBox </a> 
@@ -28,8 +30,7 @@ VMware Fusion 对 Mac 个人用户是免费的！请到<a href="https://www.vmwa
 * Windows/MacOS: <a href="https://www.docker.com" target="_blank">docker </a> 
 * **Mac M1/M2**: 以上两种解决方案中 VMware 和 Docker 都适配 Apple Silicon 了
     
-> **关于 docker**
-注意：docker 本质上是一个容器管理工具，只是在 Mac 或 Windows 上会附赠虚拟 Linux 环境的功能。你事实上可以在 docker 中使用多种 Linux 发行版，甚至是预先配好的开发环境。
+> **关于 docker** docker 本质上是一个容器管理工具，只是在 Mac 或 Windows 上会附赠虚拟 Linux 环境的功能。你事实上可以在 docker 中使用多种 Linux 发行版，甚至是预先配好的开发环境。
 docker 默认只提供命令行界面，对新手而言或许不太友好。然而，docker 本身大概率会是你未来开发不可或缺的工具之一，也是相对来说更轻量级的虚拟机选项。推荐有心提前学习的同学借此机会上手 docker。
 
 #### **Linux系统版本**
@@ -51,6 +52,7 @@ docker 默认只提供命令行界面，对新手而言或许不太友好。然�
 `sudo` 和 `apt` 会成为你经常键入的命令。
 
 > `tldr` 是我个人非常推荐安装的一个工具；对于你不记得用法的命令行，你只需要`tldr`它，比如：
+
 ```bash
 (base)  ~ > tldr apt
 
@@ -115,6 +117,7 @@ More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 
 * 在你本地的 VScode 里，安装 Remote SSH 扩展。
 * 在虚拟机里，你需要安装 open-ssh 服务：
+
 ```bash
 sudo apt-get install openssh-server
 # Make sure ssh-daemon is running by running `ps -aef | grep sshd`
@@ -124,16 +127,21 @@ ssh localhost # this should work now; it's normal that nothing is shown when inp
 
 * 获取你的虚拟机在宿主网络中的 IP 地址；具体方式与虚拟机解决方案有关，VMware Fusion 可以直接在虚拟机概况界面看到。
 * 回到你本地的 VScode，点击最左下角的按钮，选择 Connect to Host，然后输入：
+
 ```bash
 <username>@<ip_address>
 ```
+
 其中 username 是你虚拟机账户的名字。敲下回车，像之前一样输入密码；不出意外的话，你的 VScode 现在应该已经连接进入你的虚拟机了。今后要完成 Lab，可以直接在这个界面打开相应的文件夹，然后就可以像在本地一样敲代码啦～
 
 * 以上完成后，你还可以试试用`scp`来在虚拟机和宿主之间互传文件；比如把虚拟机上的输出传到宿主当前文件夹下：
+
 ```bash
 scp username@ip:~/folder/log.txt ./
 ```
+
 * 或者把本地的 Lab 文件夹传到虚拟机里：
+
 ```bash
 scp -r ./datalab-handout username@ip:~/ICS-Labs/
 ```
@@ -143,4 +151,3 @@ scp -r ./datalab-handout username@ip:~/ICS-Labs/
 由我的史诗级学长 ~~PKUflyingpig~~ 倾情打造的<a href="https://csdiy.wiki" target="_blank">CS 自学指南</a> ，相信总有你没学过的吧。
 
 目前你只需要关注“必学工具”部分，以及“编程入门”里的 MIT-Missing Semester。里面都附上了深入学习的资料，也部份覆盖了上面提到的一些操作。有空可以尝试学习看看～
-

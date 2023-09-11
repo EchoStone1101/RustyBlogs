@@ -29,7 +29,7 @@ tags:
 * Windows: <a href="https://mp.weixin.qq.com/s/T6ertdMaN-Qb-8YlLp12uw" target="_blank">VMware </a>
 * MacOS: <a href="https://mp.weixin.qq.com/s/VDwpn34hpLroSLUVhdTxmg" target="_blank">VMware/VirtualBox </a> 
 VMware Fusion 对 Mac 个人用户是免费的！请到<a href="https://www.vmware.com/products/fusion.html" target="_blank">这里</a>注册。
-* Windows/MacOS: <a href="https://www.docker.com" target="_blank">docker </a> 
+* Windows/MacOS: <a href="https://mp.weixin.qq.com/s/juWtNUnIuFJfXoP_6eKIKg" target="_blank">docker </a> 
 * **Mac M1/M2**: 以上两种解决方案中 VMware 和 Docker 都适配 Apple Silicon 了
     
 > **关于 docker** docker 本质上是一个容器管理工具，只是在 Mac 或 Windows 上会附赠虚拟 Linux 环境的功能。你事实上可以在 docker 中使用多种 Linux 发行版，甚至是预先配好的开发环境。

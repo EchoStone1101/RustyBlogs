@@ -65,7 +65,7 @@ Recommended replacement for `apt-get` when used interactively in Ubuntu versions
 For equivalent commands in other package managers, see <https://wiki.archlinux.org/title/Pacman/Rosetta>.
 More information: <https://manpages.debian.org/latest/apt/apt.8.html>.
 
-- Update the list of available packages and versions (it's recommended to run this before other "apt" commands):
+- Update the list of available packages and versions (it is recommended to run this before other "apt" commands):
     sudo apt update
 
 - Search for a given package:

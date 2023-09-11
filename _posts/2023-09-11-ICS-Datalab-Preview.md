@@ -9,7 +9,9 @@ tags:
 > 2023 Fall Semester
 
 ### 时间节点
+
 **Due Time**: TBA
+
 **Deadline**: TBA
 
 **这应该是你会遇到的最简单的lab了，非常不建议把graceday花在这里！**
@@ -23,7 +25,7 @@ tags:
 
 * **登陆 Autolab 网站**
 
-初次登陆，访问 <a href="autolab.pku.edu.cn" target="_blank">autolab.pku.edu.cn</a>，点击“Forgot your password?”，输入学号对应的邮箱，然后点击确定，更改新密码即可。
+初次登陆，访问 <a href="https://autolab.pku.edu.cn" target="_blank">autolab.pku.edu.cn</a>，点击“Forgot your password?”，输入学号对应的邮箱，然后点击确定，更改新密码即可。
 
 * **下载 Lab Handout**
 

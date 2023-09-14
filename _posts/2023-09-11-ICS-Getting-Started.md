@@ -46,7 +46,7 @@ docker 默认只提供命令行界面，对新手而言或许不太友好。然�
 * `gcc`，编译链接你的 C 代码
 * `make`，指导你的 Lab 程序自动 build
 * `vim`，方便你在命令行修改文件
-* `man`，方便查询命令行等相关手册
+* `man` (optional)，方便查询命令行等相关手册
 * `wget` (optional)，从链接下载文件
 * `git` (recommended)，代码版本管理
 * `tldr` (recommended)，帮助快速查询命令行用法

@@ -7,7 +7,7 @@ tags:
    - Rust
 ---
 
-Disclaimer: what I am about to describe is not necessarily limited to Rust in any way. I just happened to implemented it in Rust. Plus I happened to like Rust.
+**Disclaimer**: what I am about to describe is not necessarily limited to Rust in any way. I just happened to have implemented it in Rust. Plus I also happened to like Rust.
 
 Also, it is possible that this problem was solved long ago by other clever computer people, and I was just too impatient to dig for it. The truth is: I spent so long getting *my* solution to work, that now I am just proud of it. At least I get to be one of the "clever computer people" :)
 
@@ -19,7 +19,7 @@ By that, I mean every expression that my compiler handles will be associated wit
 
 For instance, the `Type` of an `Exp::PointerLiteral` (a pointer literal, as an expression) is always `Type::Pointer`, which should never be used like an `Exp::IntLiteral`, whose `Type` may be one of `Type::Int` or `Type::BitVec`. (Yes, both `Exp` and `Type` are Rust enums. God knows how I would write code without Rust enums.)
 
-`Type`s are the runtime safety line that gives me confidence, that my code will not break deep into some parsing or optimization pass. Better still, `Type`s look much less desperate than a Java programmer spamming `instanceof` everywhere. `Type`s are really nice and all. But there's one problem with it - how do I compare two `Type`s.
+`Type`s are the runtime safety line that gives me confidence, that my code will not break deep into some parsing or optimization pass. Better still, `Type`s look much less desperate than a Java programmer spamming `instanceof` everywhere. `Type`s are really nice and all. But there's one problem with it - how do I compare two `Type`s?
 
 ## Higher-Order Types, and Named Types, and Hash Failure
 
@@ -87,7 +87,7 @@ where the type declaration may contain *recursion*.
 
 With named types, the hashing scheme suddenly falls apart. To represent the named type references, there was a `Type::Named` variant, which only contained the type name, which in turn must be resolved by the `TypeManager` into its verbose, *true* `Type`. This workaround, apart from being messy, is fundamentally flawed, because it breaks the **invariant that identical `Type`s are clones of the same `Rc<Type>`**. Before and after resolving a `Type::Named`, `TypeManager` can give different answers to a `Type` comparsion.
 
-Previously, I actually managed to make this scheme work, for the parsing part of my compiler only, by invoking the resolve function at very specific points. No need to say it was unfavorable. Worse still, it simply breaks when I started executing the expressions, which made me really consider how to really fix the scheme for the named types.
+Previously, I actually managed to make this scheme work, for the parsing part of my compiler only, by invoking the resolve function at very specific points. No need to say it was unfavorable. Worse still, it simply breaks when I started executing the expressions, which made me really reconsider how to design a scheme that works for the named types.
 
 ## Identity, Equivalence, and Union-Find
 
@@ -145,6 +145,11 @@ The algorithm has two procedures, one for computing the correct aliasing relatio
 Point the alias pointer of `ty` to `reduced`. Then, if the order of `ultimate` is less than that of `reduced`, point `reduced` to `ultimate`. Otherwise, point `ultimate` to `reduced`.
 
 > Algorithm II. Given an `Rc<Type>`, determine the alias pointer, with current declarations in effect.
+
+**Input**: A `Rc<Type>` to be set up.
+
+**Output**: The given `Type`'s alias pointer is correctly set up.
+
 1. Denote the given `Rc<Type>` as `ty`. Find `reduced` like in step (4) of Algorithm I.
 2. Point the alias pointer of `ty` to `reduced`.
 
@@ -189,7 +194,7 @@ Now the alias relation looks like
 
 ||`i8`| `i32`| `A`| `B`|`X`| `Y`| `Z`| `{A, i32}`|`{i8, B}`| `{i8, i32}`|
 |---|---|---|---|---|---|---|---|---|---|---|
-|alias|`A`| `B`| `A`| `B`|`X`| `Y`| `Z`| `X`|`X`| `X`|
+|alias|`A`| `B`| `A`| `B`|`X`| `X`| `X`| `X`|`X`| `X`|
 
 Note how all three aggregate `Type`s now alias to `X`. To determine whether two `Type`s are *equivalent*, it suffices to run a normal union-find query, which, with path compression, is practically `O(1)`. 
 
@@ -199,9 +204,9 @@ I will not bore you with a rundown of the second procedure. Hopefully the algori
 
 ### (Why) Does it Work?
 
-The step (1) and (2) of Algorithm.I is fairly standard union-find business, which I don't think needs defending. The step (3) and (4) contains two uncommon details, but first I'd like to note the main idea when designing the algorithm: 
+The step (1) and (2) of Algorithm.I is fairly standard union-find business, which I don't think needs defending. The step (3) and (4) contains two uncommon details, but first I'd like to throw out the main idea when designing the algorithm: 
 
-> **Alias pointers should always point from a higher-order `Type`, to a lower-order one**
+> **Alias pointers should always point from a higher-order `Type`, to a lower-order one.**
 
 * The update order in step (3), assuming the principle above, is actually making an *inductive* guarantee: that, given all lower-order `Type`s are correctly aliased, the current `Type` can be correctly aliased as well, only by finding the roots of component `Type`s.
 
@@ -211,11 +216,11 @@ Informally speaking, the algorithm is essentially doing *best effort reduction* 
 
 The principle has yet one more important aspect, and that is better handling for *recursive* type declarations mentioned above. The exact impact on a recursive declaration is, as it would be in other great informative writings, left for the curious reader to think about themselves.
 
-In truth, the implementation contains several more subtlties in terms of updating the alais pointer, so that we don't accidentally go on an endless recursion. I would like to show the real code, but it is kind of convoluted with other stuff. Anyway, I would like to think that the description so far has captured the gist of it.
+In truth, the implementation contains several more subtlties in terms of updating the alais pointer, so that we don't accidentally go on an endless recursion. I would like to show the real code, but it is kind of convoluted with other stuff. Anyway, I believe that the description so far has captured the gist of the design.
 
 ## After-Math
 
-Designing and implementing the algorithm is easily the most *algorithmic*, *math-y* experience for me as a system programmer within a long while. It was actually kind of fun and fulfilling.
+Designing and implementing the algorithm is easily the most *algorithmic*, *math-y* experience for me as a system programmer within a long while. It was surprisingly quite fun and fulfilling.
 
 Arriving at the final design of my type system took around a week. Nearly half of it was spent in making the transition from the old scheme to the new one. The fact that Rust's `HashMap` uses a random hashing algorithm by default made it extra difficult to debug the algorithm, especially when the bugs are occurring only 1% of the time. I really should have replaced the hasher with a deterministic one, but somehow I was just lazy.
 

@@ -12,9 +12,9 @@ Here is a collection of useful information about the course:
 
 * <a href="2023/09/11/ICS-Getting-Started.html" target="_blank">ICS: Getting Started</a>
 
-<!-- * <a href="2023/09/11/ICS-Datalab-Preview.html" target="_blank">ICS: Datalab Preview</a> -->
-
 * <a href="2023/09/21/ICS-GCC-UB.html" target="_blank">A Prime Example of Undefined Behavior in GCC</a>
+
+* <a href="2023/09/22/ICS-Datalab-Preview.html" target="_blank">ICS: Datalab Preview</a>
 
 ## Rust Stuff
 

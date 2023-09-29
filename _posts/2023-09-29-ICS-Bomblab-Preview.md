@@ -27,7 +27,7 @@ tags:
 
 * 在任何阶段，解答错误都会导致本lab得分**永久扣除**！
 
-* 在 class machine 上默认开启了地址空间随机化；这意味着每次运行程序时的**地址都有变化**，需要特别注意。特别地，你不能借助于 `bomb` 运行之前反汇编得到的指令地址来设置断点。当然，要绕过这一点也很简单：你总是可以首先 `break main`，然后在用运行时的地址设置你想要的断点。
+* 在 class machine 上默认开启了地址空间随机化；这意味着每次运行程序时的**地址都有变化**，需要特别注意。特别地，你不能借助于 `bomb` 运行之前反汇编得到的指令地址来设置断点。当然，要绕过这一点也很简单：你总是可以首先 `break main`，然后再用运行时的地址设置你想要的断点。
 
 ## 文件一览
 
@@ -37,10 +37,10 @@ tags:
 
 ### `bomb`
 
-你要处理的二进制炸弹。为了你的（分数）安全着想，请不要一上来就直接运行它，而是牢记下面 Defusing Your Bomb 一节的操作指南。
+你要处理的二进制炸弹。为了你的（分数）安全着想，请不要一上来就直接运行它，而是牢记下面 Sandboxing Your Bomb 一节的操作指南。
 
 
-## Defusing Your Bomb
+## Sandboxing Your Bomb
 
 下面是利用`gdb`的**安全措施**：
 
@@ -96,7 +96,7 @@ Breakpoint 1 at 0x2108
 (gdb) run
 Starting program: /home/CA11/bomb 
 
-Welcome to Dr. Evil's little bomb. You have 6 phases with
+Welcome to Dr. Evil‘s little bomb. You have 6 phases with
 which to blow yourself up. Have a nice day! Mua ha ha ha!
 ICS is hard
 

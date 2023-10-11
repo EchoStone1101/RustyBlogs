@@ -18,6 +18,8 @@ Here is a collection of useful information about the course:
 
 * <a href="2023/09/29/ICS-Bomblab-Preview.html" target="_blank">ICS: Bomblab Preview</a>
 
+* <a href="2023/10/11/ICS-Attacklab-Preview.html" target="_blank">ICS: Attacklab Preview</a>
+
 ## Rust Stuff
 
 My experiences with Rust, and also my thoughts on the language. Mostly positive, as I am a bit of a Rust fanboy.

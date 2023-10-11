@@ -18,7 +18,7 @@ Here is a collection of useful information about the course:
 
 * <a href="2023/09/29/ICS-Bomblab-Preview.html" target="_blank">ICS: Bomblab Preview</a>
 
-<!-- * <a href="2023/10/11/ICS-Attacklab-Preview.html" target="_blank">ICS: Attacklab Preview</a> -->
+* <a href="2023/10/11/ICS-Attacklab-Preview.html" target="_blank">ICS: Attacklab Preview</a>
 
 ## Rust Stuff
 

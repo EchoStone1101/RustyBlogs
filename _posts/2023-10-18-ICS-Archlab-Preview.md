@@ -1,6 +1,6 @@
 ---
 title: "ICS: Archlab Preview"
-date: 2023-10-19
+date: 2023-10-18
 author: EchoStone
 layout: post
 tags:

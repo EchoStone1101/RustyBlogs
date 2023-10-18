@@ -20,7 +20,7 @@ Here is a collection of useful information about the course:
 
 * <a href="2023/10/11/ICS-Attacklab-Preview.html" target="_blank">ICS: Attacklab Preview</a>
 
-* <a href="2023/10/19/ICS-Archlab-Preview.html" target="_blank">ICS: Archlab Preview</a>
+* <a href="2023/10/18/ICS-Archlab-Preview.html" target="_blank">ICS: Archlab Preview</a>
 
 ## Rust Stuff
 
